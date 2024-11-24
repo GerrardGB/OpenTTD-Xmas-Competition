@@ -1,0 +1,32 @@
+##grflangid 0x01
+##plural 0
+
+# GRF name and description definitions
+STR_GRF_NAME        :Xmas Competition
+STR_GRF_DESCRIPTION :A Xmas themed competition between delivering Good Presents and Bad Presents
+
+STR_CTNAME_GPRE           :Good presents
+STR_CTUNIT_GPRE           :Crate of good presents
+STR_CTNITEMS_GPRE         :{COMMA} crate{P "" s} of good presents
+STR_CTABBREV_GPRE         :{TINYFONT}GP
+
+STR_CTNAME_BPRE           :Bad presents
+STR_CTUNIT_BPRE           :Crate of bad presents
+STR_CTNITEMS_BPRE         :{COMMA} crate{P "" s} of bad presents
+STR_CTABBREV_BPRE         :{TINYFONT}BP
+
+STR_CTNAME_TURD           :Turds
+STR_CTUNIT_TURD           :Tonne of turds
+STR_CTNITEMS_TURD         :{COMMA} tonne{P "" s} of turds
+STR_CTABBREV_TURD         :{TINYFONT}TD
+
+STR_CTNAME_GTRD           :Glittered turds
+STR_CTUNIT_GTRD           :Tonne of glittered turds
+STR_CTNITEMS_GTRD         :{COMMA} tonne{P "" s} of glittered turds
+STR_CTABBREV_GTRD         :{TINYFONT}GT
+
+STR_TURD_FARM_INDUSTRY_NAME :Turd Farm
+STR_GLITTER_FACTORY_INDUSTRY_NAME :Glitter Factory
+STR_GOOD_FACTORY_INDUSTRY_NAME :Good Presents Factory
+STR_BAD_FACTORY_INDUSTRY_NAME :Bad Presents Factory
+STR_PRESENT_DROPOFF_INDUSTRY_NAME :Presents Drop-off Point

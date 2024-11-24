@@ -1,0 +1,565 @@
+grf {
+	grfid: "GD\01\01";
+	name: string(STR_GRF_NAME);
+	desc: string(STR_GRF_DESCRIPTION);
+	version: 0;
+	min_compatible_version: 0;
+}
+
+// #################
+// # -- CARGOES -- #
+// #################
+
+cargotable {
+	COAL,
+    OIL_,
+    IORE,
+	COLA,
+	TOFF,
+	BATT,
+	PLST,
+	TOYS,
+	TURD,
+	GTRD,
+	GPRE,
+    BPRE
+}
+
+spriteset (spriteset_goodpresent_icon, "gfx/good-present-icon.png") {
+	[0,0,12,12,0,0,NOCROP]
+}
+
+spriteset (spriteset_badpresent_icon, "gfx/bad-present-icon.png") {
+	[0,0,12,12,0,0,NOCROP]
+}
+
+spriteset (spriteset_turd_icon, "gfx/turd-icon.png") {
+	[0,0,12,12,0,0,NOCROP]
+}
+
+spriteset (spriteset_glittered_turd_icon, "gfx/glittered-turd-icon.png") {
+	[0,0,12,12,0,0,NOCROP]
+}
+
+item(FEAT_CARGOS, GOODPRESENTS, 12) {
+	property {
+		number: 12;
+		cargo_label: "GPRE";
+		type_name: string(STR_CTNAME_GPRE);
+		unit_name: string(STR_CTUNIT_GPRE);
+		units_of_cargo: string(STR_CTUNIT_GPRE);
+		items_of_cargo: string(STR_CTNITEMS_GPRE);
+		type_abbreviation: string(STR_CTABBREV_GPRE);
+		weight: 0.5;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_PIECE_GOODS);
+		station_list_colour: 86;
+		cargo_payment_list_colour: 86;
+		capacity_multiplier: 2;
+		town_growth_multiplier: TOWNGROWTH_GOODS;
+		price_factor: 151;
+		penalty_lowerbound: 0;
+		single_penalty_length: 36;
+//		sprite: 4317;
+		sprite: NEW_CARGO_SPRITE;
+	}
+	graphics {
+		default: spriteset_goodpresent_icon; 
+	}
+}
+
+item(FEAT_CARGOS, BADPRESENTS, 13) {
+	property {
+		number: 13;
+		cargo_label: "BPRE";
+		type_name: string(STR_CTNAME_BPRE);
+		unit_name: string(STR_CTUNIT_BPRE);
+		units_of_cargo: string(STR_CTUNIT_BPRE);
+		items_of_cargo: string(STR_CTNITEMS_BPRE);
+		type_abbreviation: string(STR_CTABBREV_BPRE);
+		weight: 0.5;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_PIECE_GOODS);
+		station_list_colour: 164;
+		cargo_payment_list_colour: 164;
+		capacity_multiplier: 2;
+		town_growth_multiplier: TOWNGROWTH_GOODS;
+		price_factor: 151;
+		penalty_lowerbound: 0;
+		single_penalty_length: 36;
+//		sprite: 4312;
+		sprite: NEW_CARGO_SPRITE;
+	}
+	graphics {
+		default: spriteset_badpresent_icon; 
+	}
+}
+
+item(FEAT_CARGOS, PLASTIC, 14) {
+	property {
+		number: 14;
+		cargo_label: "PLST";
+		type_name: TTD_STR_CARGO_PLURAL_PLASTIC;
+		unit_name:TTD_STR_CARGO_SINGULAR_PLASTIC;
+		units_of_cargo: TTD_STR_LITERS;
+		items_of_cargo: TTD_STR_QUANTITY_PLASTIC;
+		type_abbreviation: TTD_STR_ABBREV_PLASTIC;
+		weight: 1;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_LIQUID);
+		station_list_colour: 146;
+		cargo_payment_list_colour: 146;
+		capacity_multiplier: 1;
+		town_growth_multiplier: TOWNGROWTH_NONE;
+		price_factor: 115;
+		penalty_lowerbound: 25;
+		single_penalty_length: 80;
+		sprite: 4322;
+	}
+}
+
+item(FEAT_CARGOS, BATTERIES, 15) {
+	property {
+		number: 15;
+		cargo_label: "BATT";
+		type_name: TTD_STR_CARGO_PLURAL_BATTERIES;
+		unit_name:TTD_STR_CARGO_SINGULAR_BATTERY;
+		units_of_cargo: TTD_STR_ITEMS;
+		items_of_cargo: TTD_STR_QUANTITY_BATTERIES;
+		type_abbreviation: TTD_STR_ABBREV_BATTERIES;
+		weight: 1;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_PIECE_GOODS);
+		station_list_colour: 86;
+		cargo_payment_list_colour: 86;
+		capacity_multiplier: 1;
+		town_growth_multiplier: TOWNGROWTH_NONE;
+		price_factor: 104;
+		penalty_lowerbound: 0;
+		single_penalty_length: 32;
+		sprite: 4323;
+	}
+}
+
+
+item(FEAT_CARGOS, TURDS, 16) {
+	property {
+		number: 16;
+		cargo_label: "TURD";
+		type_name: string(STR_CTNAME_TURD);
+		unit_name: string(STR_CTUNIT_TURD);
+		units_of_cargo: string(STR_CTUNIT_TURD);
+		items_of_cargo: string(STR_CTNITEMS_TURD);
+		type_abbreviation: string(STR_CTABBREV_TURD);
+		weight: 1;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_BULK);
+		station_list_colour: 32;
+		cargo_payment_list_colour: 32;
+		capacity_multiplier: 1;
+		town_growth_multiplier: TOWNGROWTH_NONE;
+		price_factor: 104;
+		penalty_lowerbound: 0;
+		single_penalty_length: 32;
+		sprite: NEW_CARGO_SPRITE;
+	}
+	graphics {
+		default: spriteset_turd_icon; 
+	}
+}
+
+
+item(FEAT_CARGOS, GLITTEREDTURDS, 17) {
+	property {
+		number: 17;
+		cargo_label: "GTRD";
+		type_name: string(STR_CTNAME_GTRD);
+		unit_name: string(STR_CTUNIT_GTRD);
+		units_of_cargo: string(STR_CTUNIT_GTRD);
+		items_of_cargo: string(STR_CTNITEMS_GTRD);
+		type_abbreviation: string(STR_CTABBREV_GTRD);
+		weight: 1;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_BULK);
+		station_list_colour: 57;
+		cargo_payment_list_colour: 57;
+		capacity_multiplier: 1;
+		town_growth_multiplier: TOWNGROWTH_NONE;
+		price_factor: 135;
+		penalty_lowerbound: 25;
+		single_penalty_length: 110;
+		sprite: NEW_CARGO_SPRITE;
+	}
+	graphics {
+		default: spriteset_glittered_turd_icon; 
+	}
+}
+
+item(FEAT_CARGOS, COLAITEM, 18) {
+	property {
+		number: 18;
+		cargo_label: "COLA";
+		type_name: TTD_STR_CARGO_PLURAL_COLA;
+		unit_name:TTD_STR_CARGO_SINGULAR_COLA;
+		units_of_cargo: TTD_STR_LITERS;
+		items_of_cargo: TTD_STR_QUANTITY_COLA;
+		type_abbreviation: TTD_STR_ABBREV_COLA;
+		weight: 1;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_LIQUID);
+		station_list_colour: 83;
+		cargo_payment_list_colour: 83;
+		capacity_multiplier: 1;
+		town_growth_multiplier: TOWNGROWTH_NONE;
+		price_factor: 108;
+		penalty_lowerbound: 25;
+		single_penalty_length: 60;
+		sprite: 4319;
+	}
+}
+
+item(FEAT_CARGOS, TOFFEE, 19) {
+	property {
+		number: 19;
+		cargo_label: "TOFF";
+		type_name: TTD_STR_CARGO_PLURAL_TOFFEE;
+		unit_name:TTD_STR_CARGO_SINGULAR_TOFFEE;
+		units_of_cargo: TTD_STR_TONS;
+		items_of_cargo: TTD_STR_QUANTITY_TOFFEE;
+		type_abbreviation: TTD_STR_ABBREV_TOFFEE;
+		weight: 1;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_BULK);
+		station_list_colour: 51;
+		cargo_payment_list_colour: 51;
+		capacity_multiplier: 1;
+		town_growth_multiplier: TOWNGROWTH_NONE;
+		price_factor: 144;
+		penalty_lowerbound: 10;
+		single_penalty_length: 60;
+		sprite: 4320;
+	}
+}
+
+item(FEAT_CARGOS, TOYITEMS, 20) {
+	property {
+		number: 20;
+		cargo_label: "TOYS";
+		type_name: TTD_STR_CARGO_PLURAL_TOYS;
+		unit_name:TTD_STR_CARGO_SINGULAR_TOY;
+		units_of_cargo: TTD_STR_ITEMS;
+		items_of_cargo: TTD_STR_QUANTITY_TOYS;
+		type_abbreviation: TTD_STR_ABBREV_TOYS;
+		weight: 1;
+		is_freight: 1;
+		cargo_classes: bitmask(CC_PIECE_GOODS);
+		station_list_colour: 140;
+		cargo_payment_list_colour: 140;
+		capacity_multiplier: 2;
+		town_growth_multiplier: TOWNGROWTH_NONE;
+		price_factor: 135;
+		penalty_lowerbound: 25;
+		single_penalty_length: 110;
+		sprite: 4317;
+	}
+}
+
+
+// #######################
+// # -- INDUSTRYTILES -- #
+// #######################
+
+// Presents Drop-off
+item (FEAT_INDUSTRYTILES, item_industry_present_dropoff_building_tile_1) {
+	property {
+		substitute: 0x80;
+		override: 0x80;
+		accepted_cargos: [[GPRE, 8], [BPRE, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_present_dropoff_building_tile_2) {
+	property {
+		substitute: 0x8B;
+		override: 0x8B;
+		accepted_cargos: [[GPRE, 8], [BPRE, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_present_dropoff_building_tile_3) {
+	property {
+		substitute: 0x8C;
+		override: 0x8C;
+		accepted_cargos: [[GPRE, 8], [BPRE, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_present_dropoff_building_tile_4) {
+	property {
+		substitute: 0x8D;
+		override: 0x8D;
+		accepted_cargos: [[GPRE, 8], [BPRE, 8]];
+	}
+}
+
+// Good Presents Factory
+item (FEAT_INDUSTRYTILES, item_industry_good_factory_building_tile_1) {
+	property {
+		substitute: 0x83;
+		override: 0x83;
+		accepted_cargos: [[TOYS, 8], [TOFF, 8], [COLA, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_good_factory_building_tile_2) {
+	property {
+		substitute: 0x84;
+		override: 0x84;
+		accepted_cargos: [[TOYS, 8], [TOFF, 8], [COLA, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_good_factory_building_tile_3) {
+	property {
+		substitute: 0x85;
+		override: 0x85;
+		accepted_cargos: [[TOYS, 8], [TOFF, 8], [COLA, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_good_factory_building_tile_4) {
+	property {
+		substitute: 0x86;
+		override: 0x86;
+		accepted_cargos: [[TOYS, 8], [TOFF, 8], [COLA, 8]];
+	}
+}
+
+// Bad Presents Factory
+item (FEAT_INDUSTRYTILES, item_industry_bad_factory_building_tile_1) {
+	property {
+		substitute: 0x27;
+		override: 0x27;
+		accepted_cargos: [[COAL, 8], [GTRD, 8], [OIL_, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_bad_factory_building_tile_2) {
+	property {
+		substitute: 0x28;
+		override: 0x28;
+		accepted_cargos: [[COAL, 8], [GTRD, 8], [OIL_, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_bad_factory_building_tile_3) {
+	property {
+		substitute: 0x29;
+		override: 0x29;
+		accepted_cargos: [[COAL, 8], [GTRD, 8], [OIL_, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_bad_factory_building_tile_4) {
+	property {
+		substitute: 0x2A;
+		override: 0x2A;
+		accepted_cargos: [[COAL, 8], [GTRD, 8], [OIL_, 8]];
+	}
+}
+
+// Glitter Factory
+item (FEAT_INDUSTRYTILES, item_industry_glitter_factory_building_tile_1) {
+	property {
+		substitute: 0x40;
+		override: 0x40;
+		accepted_cargos: [[PLST, 8], [TURD, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_glitter_factory_building_tile_2) {
+	property {
+		substitute: 0x41;
+		override: 0x41;
+		accepted_cargos: [[PLST, 8], [TURD, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_glitter_factory_building_tile_3) {
+	property {
+		substitute: 0x42;
+		override: 0x42;
+		accepted_cargos: [[PLST, 8], [TURD, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_glitter_factory_building_tile_4) {
+	property {
+		substitute: 0x43;
+		override: 0x43;
+		accepted_cargos: [[PLST, 8], [TURD, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_glitter_factory_building_tile_5) {
+	property {
+		substitute: 0x44;
+		override: 0x44;
+		accepted_cargos: [[PLST, 8], [TURD, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_glitter_factory_building_tile_6) {
+	property {
+		substitute: 0x45;
+		override: 0x45;
+		accepted_cargos: [[PLST, 8], [TURD, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_glitter_factory_building_tile_7) {
+	property {
+		substitute: 0x46;
+		override: 0x46;
+		accepted_cargos: [[PLST, 8], [TURD, 8]];
+	}
+}
+item (FEAT_INDUSTRYTILES, item_industry_glitter_factory_building_tile_8) {
+	property {
+		substitute: 0x47;
+		override: 0x47;
+		accepted_cargos: [[PLST, 8], [TURD, 8]];
+	}
+}
+
+
+// ####################
+// # -- INDUSTRIES -- #
+// ####################
+
+item (FEAT_INDUSTRIES, item_industry_power_plant) {
+	property {
+		substitute: INDUSTRYTYPE_POWER_PLANT;
+		override: INDUSTRYTYPE_POWER_PLANT;
+		prob_map_gen: 0;
+		prob_in_game: 0;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_iron_mine) {
+	property {
+		substitute: INDUSTRYTYPE_IRON_ORE_MINE;
+		override: INDUSTRYTYPE_IRON_ORE_MINE;
+		prob_map_gen: 0;
+		prob_in_game: 0;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_steel_mill) {
+	property {
+		substitute: INDUSTRYTYPE_STEEL_MILL;
+		override: INDUSTRYTYPE_STEEL_MILL;
+		prob_map_gen: 0;
+		prob_in_game: 0;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_battery_farm) {
+	property {
+		substitute: INDUSTRYTYPE_BATTERY_FARM;
+		prob_map_gen: 4;
+		prob_in_game: 3;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_plastic_fountain) {
+	property {
+		substitute: INDUSTRYTYPE_PLASTIC_FOUNTAIN;
+		prob_map_gen: 5;
+		prob_in_game: 3;
+		conflicting_ind_types: [INDUSTRYTYPE_SWEETS_FACTORY];
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_cola_wells) {
+	property {
+		substitute: INDUSTRYTYPE_COLA_WELLS;
+		prob_map_gen: 5;
+		prob_in_game: 3;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_toffee_quarry) {
+	property {
+		substitute: INDUSTRYTYPE_TOFFE_QUARRY;
+		prob_map_gen: 5;
+		prob_in_game: 3;
+		map_colour: 64;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_toy_factory) {
+	property {
+		substitute: INDUSTRYTYPE_TOY_FACTORY;
+		prob_map_gen: 5;
+		prob_in_game: 3;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_good_factory) {
+	property {
+		substitute: INDUSTRYTYPE_SWEETS_FACTORY;
+		name: string(STR_GOOD_FACTORY_INDUSTRY_NAME);
+		cargo_types:[
+			accept_cargo("TOYS", produce_cargo("GPRE", 1)),
+			accept_cargo("COLA", produce_cargo("GPRE", 1)),
+			accept_cargo("TOFF", produce_cargo("GPRE", 1))
+		];
+		conflicting_ind_types: [INDUSTRYTYPE_PLASTIC_FOUNTAIN, INDUSTRYTYPE_COLA_WELLS, INDUSTRYTYPE_TOY_FACTORY];
+		prob_map_gen: 4;
+		prob_in_game: 3;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_bad_factory) {
+	property {
+		substitute: INDUSTRYTYPE_TEMPERATE_FACTORY;
+        override: INDUSTRYTYPE_TEMPERATE_FACTORY;
+		name: string(STR_BAD_FACTORY_INDUSTRY_NAME);
+		cargo_types:[
+			accept_cargo("COAL", produce_cargo("BPRE", 1)),
+			accept_cargo("OIL_", produce_cargo("BPRE", 1)),
+			accept_cargo("GTRD", produce_cargo("BPRE", 1))
+		];
+		conflicting_ind_types: [INDUSTRYTYPE_TEMPERATE_ARCTIC_FARM, INDUSTRYTYPE_PAPER_MILL, INDUSTRYTYPE_COAL_MINE];
+		map_colour: 28;
+		prob_map_gen: 4;
+		prob_in_game: 3;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_turd_farm) {
+	property {
+		substitute: INDUSTRYTYPE_TEMPERATE_ARCTIC_FARM;
+		override: INDUSTRYTYPE_TEMPERATE_ARCTIC_FARM;
+		name: string(STR_TURD_FARM_INDUSTRY_NAME);
+		cargo_types:[
+			produce_cargo("TURD", 8)
+		];
+		prob_map_gen: 5;
+		prob_in_game: 2;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_glitter_factory) {
+	property {
+		substitute: INDUSTRYTYPE_PAPER_MILL;
+		name: string(STR_GLITTER_FACTORY_INDUSTRY_NAME);
+		cargo_types:[
+			accept_cargo("PLST", produce_cargo("GTRD", 1)),
+			accept_cargo("TURD", produce_cargo("GTRD", 1))
+		];
+		prob_map_gen: 5;
+		prob_in_game: 2;
+	}
+}
+
+item (FEAT_INDUSTRIES, item_industry_present_dropoff) {
+	property {
+		substitute: INDUSTRYTYPE_TOY_SHOP;
+		name: string(STR_PRESENT_DROPOFF_INDUSTRY_NAME);
+		cargo_types:[
+			accept_cargo("GPRE"),
+			accept_cargo("BPRE")
+		];
+		prob_map_gen: 1;
+		prob_in_game: 4;
+		spec_flags: bitmask(IND_FLAG_ONLY_IN_LARGE_TOWNS);
+		map_colour: 164;
+	}
+}
